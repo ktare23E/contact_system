@@ -19,7 +19,7 @@ function closeModal(modalId){
     document.addEventListener("DOMContentLoaded", function() {
         const modal = document.getElementById(`${modalId}`);
         modal.addEventListener('click', function(event) {
-            const modalContent = modal.querySelector('.relative');
+            const modalContent = modal.querySelector('.modal_body');
             if (!modalContent.contains(event.target)) {
                 modal.classList.add('hidden');
             }

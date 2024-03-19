@@ -28,6 +28,7 @@
             $searchContactQuery  .=  "$column LIKE '%$search_contact%' OR ";
         }
         
+        //trim the excessive OR using rtrim
         $searchContactQuery = rtrim($searchContactQuery," OR ");
         $searchContactQuery .= ")";
         $runSearchQuery = mysqli_query($conn,$searchContactQuery);
@@ -40,7 +41,7 @@
         $totalPages = ceil($totalRows / 10);
 
         //search pagination query
-        $searchContactQuery .= "ORDER BY name LIMIT $offset,10";
+        $searchContactQuery .= " ORDER BY name LIMIT $offset,10";
         $resultSearchQuery = mysqli_query($conn,$searchContactQuery);
 
         $contacts = [];

@@ -25,16 +25,10 @@ include_once 'modals/editContactModal.php';
     <script src="../js/sidebar.js"></script>
     <script>
 
-     
-
         //call function to display data
         displayContact(1);
 
-        //close modal
-        closeModal('add_contact_modal');
-        closeModal('edit_contact_modal');
 
-        
         // add contact
         $('.add_contact').click(function(){
             let name =  $('#name').val();
@@ -239,6 +233,10 @@ include_once 'modals/editContactModal.php';
             });
         }
 
+        
+        //close modal
+        closeModal('add_contact_modal');
+        closeModal('edit_contact_modal');
 
 
     </script>

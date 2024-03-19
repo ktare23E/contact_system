@@ -7,7 +7,7 @@
     if(isset($_POST['get_contacts'])){
         $pageNumber = $_POST['pageNumber'];
 
-        //
+        //offset used to query
         $offset = ($pageNumber - 1) * 10;
 
         //retrieve query
@@ -27,9 +27,13 @@
             }
         }
         
-        //
+        //get the total number of rows using the numRows variable
         $totalRows = $numRows;
-        $totalPages = ceil($totalRows / 10); //return total number of pages
+        
+        //return total number of pages
+        $totalPages = ceil($totalRows / 10); 
+
+        //used the function for less code
         htmlFormat($totalRows,$contacts,$pageNumber,$totalPages,'changePage','nextPage','prevPage','retrieveContactData','deleteContact');
 
     }

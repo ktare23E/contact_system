@@ -1,6 +1,6 @@
 <nav class="bg-slate-800 flex flex-col gap-4 text-white pt-2">
         <div class="nav_title">
-            <h1 class="font-semibold text-xl text-white text-center">Expense Contact</h1>
+            <h1 class="font-semibold text-xl text-white text-center">Contact System</h1>
         </div>
         <div class="nav_links flex flex-col gap-5">
             <div class="h-12">
