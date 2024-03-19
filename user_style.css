@@ -1,0 +1,26 @@
+.pagination_number.active{
+    background-color: rgb(109, 170, 228);
+    border: none;
+    color: white;
+}
+
+
+.page-link.active {
+    background-color: rgb(109, 170, 228);
+    border: none;
+    color: white;
+}
+
+.page-prev:hover, .page-next:hover {
+    background-color: rgb(109, 170, 228);
+    border: none;
+    color: white;
+}
+
+.nav_links .contact.active{
+    background-color: rgb(109, 170, 228);
+}
+
+#amount:invalid {
+    box-shadow: none;
+}
