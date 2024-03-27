@@ -3,5 +3,5 @@
     session_start();
     session_destroy();
     mysqli_close($conn);
-    header('location:index.php');
+    header('location:login.php');
 ?>
