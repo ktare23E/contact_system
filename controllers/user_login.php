@@ -2,6 +2,7 @@
     include_once '../connection.php';
     session_start();
 
+    //check if submit name is set
     if(isset($_POST['submit'])){
         $email = mysqli_escape_string($conn,$_POST['email']);
         $password = mysqli_escape_string($conn,$_POST['password']);

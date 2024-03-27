@@ -56,14 +56,17 @@
             $errors[] = "Password must have at least 5 characters";
         }
 
+        //check password if it contains atleast 1 uppercase from A-Z
         if(!preg_match('/[A-Z]/', $password) ){
             $errors[] = "Password must have at least 1 uppercase character";
         }
 
+        //check password if it contains atleast 1 number from 0-9
         if(!preg_match('/[0-9]/', $password)){
             $errors[] = "Password must have at least 1 number character (0-9)";
         }
 
+        //check if empty password
         if(empty($confirm_password)){
             $errors[] = "Confirmation Password is required";
         }
@@ -73,10 +76,12 @@
             $errors[] = "Password and confirmation password does not match";
         }
 
+        //check if password and confirm password is the same
         if($password === $confirm_password){
             $hashed_password = password_hash($password, PASSWORD_BCRYPT);
         }
 
+        //check if errors are empty
         if(empty($errors)){
             //insert into the database
             $sql = "INSERT INTO users (first_name,last_name,email,password)
@@ -90,6 +95,8 @@
 
                 if($runRetrieveQuery){
                     $userDataRow = mysqli_fetch_assoc($runRetrieveQuery);
+
+                    //retrieve user_id and initialize it into the session 
                     $_SESSION['user_id'] = $userDataRow['user_id'];
                     $_SESSION['is_logged_in'] = 1;
                     header('location:../thank_you.php?success');
