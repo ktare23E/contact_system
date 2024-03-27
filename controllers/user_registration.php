@@ -20,7 +20,7 @@
             //append the error to the error array variable
             $errors[] = 'First name is required';
         }
-
+        
         if(empty($last_name)){
             $errors[] = 'Last name is required';
         }
@@ -103,7 +103,9 @@
                 }
             }
         }else{
+            // Wrapping the errors using json_encode to convert them into a string
             $errorData = json_encode($errors);
+            // Passing the errors to the URL-encoded query parameter for redirection
             header("location:../register.php?errors=".urlencode($errorData));
         }
 

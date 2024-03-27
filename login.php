@@ -67,6 +67,7 @@
     </section>
 
     <script>
+        //hide and show password
         $('.eye-icon').click(function () {
             $(this).addClass('hidden');
             $('.password-input').attr('type', 'text');
